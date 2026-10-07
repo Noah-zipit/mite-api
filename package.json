@@ -7,5 +7,7 @@
   },
   "devDependencies": {
     "vercel": "^59.11.7"
-  }
+  },
+  "description": "Serverless YouTube search and stream-lookup API (youtubei.js, Vercel functions).",
+  "repository": "github:Noah-zipit/mite-api"
 }
