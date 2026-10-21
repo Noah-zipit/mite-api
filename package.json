@@ -11,5 +11,13 @@
     "vercel": "^59.11.7"
   },
   "description": "Serverless YouTube search and stream-lookup API (youtubei.js, Vercel functions).",
-  "repository": "github:Noah-zipit/mite-api"
+  "repository": "github:Noah-zipit/mite-api",
+  "keywords": [
+    "youtube",
+    "youtubei",
+    "serverless",
+    "vercel",
+    "stream",
+    "search-api"
+  ]
 }
