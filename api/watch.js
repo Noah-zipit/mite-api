@@ -27,19 +27,19 @@ export default async function handler(req, res) {
         const videoFmt = info.chooseFormat({ type: 'video+audio', quality: 'best' });
         const videoUrl = videoFmt?.decipher(youtube.session.player) || videoFmt?.url || '';
 
-        const audioDownloads = info.formats
+        const audioDownloads = (info.formats || [])
             .filter(f => f.has_audio && !f.has_video)
             .map(f => ({
                 quality: `${Math.round((f.average_bitrate || 128000) / 1000)} kbps`,
-                url: f.decipher(youtube.session.player) || f.url
-            })).slice(0, 3);
+                url: f.decipher(youtube.session.player) || f.url || ''
+            })).filter(f => f.url).slice(0, 3);
 
-        const videoDownloads = info.formats
+        const videoDownloads = (info.formats || [])
             .filter(f => f.has_video && f.has_audio)
             .map(f => ({
                 quality: f.quality_label || '720p',
-                url: f.decipher(youtube.session.player) || f.url
-            })).slice(0, 3);
+                url: f.decipher(youtube.session.player) || f.url || ''
+            })).filter(f => f.url).slice(0, 3);
 
         return res.status(200).json({
             id,
