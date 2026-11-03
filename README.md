@@ -10,7 +10,7 @@ directly.
 | Endpoint       | Query params | Returns                          |
 |----------------|--------------|----------------------------------|
 | `/api`         | `?q=`        | search results                   |
-| `/api`         | `?id=`       | best audio stream URL for a video|
+| `/api`         | `?id=`       | audio + video stream URLs and download options|
 | `/api/search`  | `?q=`        | search results                   |
 | `/api/watch`   | `?id=`       | best audio + video stream URLs   |
 
